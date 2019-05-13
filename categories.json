@@ -1,0 +1,58 @@
+[
+        {
+            "text": "Accessories",
+            "data": 34
+        },
+        {
+            "text": "Keyboards",
+            "data": 4
+        },
+        {
+            "text": "Laptops",
+            "data": 11
+        },
+        {
+            "text": "Printers",
+            "data": 9
+        },
+        {
+            "text": "Smartphones and Tablets",
+            "data": 9
+        },
+        {
+            "text": "Mice",
+            "data": 7
+        },
+        {
+            "text": "Computer System Accessories",
+            "data": 8
+        },
+        {
+            "text": "Graphics Card",
+            "data": 4
+        },
+        {
+            "text": "Scanners",
+            "data": 4
+        },
+        {
+            "text": "Speakers",
+            "data": 3
+        },
+        {
+            "text": "Software",
+            "data": 8
+        },
+        {
+            "text": "Telekommunikation",
+            "data": 3
+        },
+        {
+            "text": "Servers",
+            "data": 3
+        },
+        {
+          "text": "Flat Screen TVs",
+          "data": 3
+        }
+    ]
