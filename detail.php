@@ -3,19 +3,19 @@ require_once('funciones.php');
 
 
 if ($_POST) {
-    $productID = $_POST['productID'];
-    $product = traerPorID($productID);
-    guardarComentario($_POST,$productID);
+    $ProductId = $_POST['ProductId'];
+    $product = traerPorID($ProductId);
+    guardarComentario($_POST,$ProductId);
 }else{
-    if (!isset($_GET['productID'])) {
+    if (!isset($_GET['ProductId'])) {
         var_dump('Producto no encontrado');
         exit;
     }else {
-        $productID = $_GET['productID'];
-        $product = traerPorID($productID);
+        $ProductId = $_GET['ProductId'];
+        $product = traerPorID($ProductId);
 
-        if (count(traerTodosComment($productID))) {
-            $comentarios = traerTodosComment($productID);
+        if (count(traerTodosComment($ProductId))) {
+            $comentarios = traerTodosComment($ProductId);
         }
     }
 }
@@ -98,12 +98,12 @@ if ($_POST) {
                    <div class="short-description">
                      <p><?=$product->Description?></p>
                    </div>
-                   <div class="tags"><strong>Product ID:</strong> <?=$product->ProductID?></div>
+                   <div class="tags"><strong>Product ID:</strong> <?=$product->ProductId?></div>
                    <div class="category"><strong>Category:</strong> <a href="#"><?=$product->MainCategory?></a></div>
                    <div class="tags"><strong>Tags:</strong> <a href="#"><?=$product->Category?></a></div>
                    <div class="cart-form-wrapper mt-30">
                      <form method="post" class="cart">
-                       <input type="hidden" value="productID" name="add-to-cart">
+                       <input type="hidden" value="ProductId" name="add-to-cart">
                        <table class="table variations no-border">
                          <tbody>
                            <tr>
@@ -203,7 +203,7 @@ if ($_POST) {
                                  </ul>
                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
                                  <form action="/detail.php">
-                                     <input type="hidden" name="productID" value="<?=$product->ProductID?>">
+                                     <input type="hidden" name="ProductId" value="<?=$product->ProductId?>">
                                      <label for="">Nombre</label>
                                      <input type="text" name="name">
                                      <label for="">Comentario</label>

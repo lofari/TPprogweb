@@ -50,26 +50,26 @@ function getBrands()
     return $asd;
 }
 
-function guardarComentario($data,$productID){
-    $comment = crearComment($data,$productID);
+function guardarComentario($data,$ProductId){
+    $comment = crearComment($data,$ProductId);
 
     $commentJSON = json_encode($comment);
 
-    file_put_contents($productID.'.json', $commentJSON . PHP_EOL , FILE_APPEND );
+    file_put_contents($ProductId.'.json', $commentJSON . PHP_EOL , FILE_APPEND );
 }
 
-function crearComment($data,$productID){
+function crearComment($data,$ProductId){
     $usuario = [
         'name' => $data['name'],
         'message' => $data['message'],
-        'id' => traerUltimoIDComment($productID),
+        'id' => traerUltimoIDComment($ProductId),
     ];
 
     return $usuario;
 }
 
-function traerTodosComment($productID){
-    $todosJSON = file_get_contents($productID.'.json');
+function traerTodosComment($ProductId){
+    $todosJSON = file_get_contents($ProductId.'.json');
 
     $commentsArray = explode(PHP_EOL, $todosJSON);
 
@@ -85,7 +85,7 @@ function traerTodosComment($productID){
 
 
 function traerUltimoIDComment(){
-    $todos = traerTodosComment($productID);
+    $todos = traerTodosComment($ProductId);
 
     if (count($todos) == 0) {
         return 1;
@@ -105,7 +105,7 @@ function traerPorID($id)
 {
     $todos = getProducts();
     foreach ($todos as $producto) {
-        if ($producto->ProductID == $id) {
+        if ($producto->ProductId == $id) {
             $final = $producto;
             return $final;
         }
