@@ -7,6 +7,15 @@ require_once('funciones.php');
   }else {
       $productID = $_GET['productID'];
       $product = traerPorID($productID);
+
+      if (count(traerTodosComment($productID))) {
+          $comentarios = traerTodosComment($productID);
+      }
+ }
+
+
+ if (isset($_POST['name'])) {
+     guardarComentario($_POST,$productID);
  }
  ?>
  <!DOCTYPE html>
@@ -88,7 +97,7 @@ require_once('funciones.php');
                    <div class="category"><strong>Category:</strong> <a href="#"><?=$product->MainCategory?></a></div>
                    <div class="tags"><strong>Tags:</strong> <a href="#"><?=$product->Category?></a></div>
                    <div class="cart-form-wrapper mt-30">
-                     <form enctype="multipart/form-data" method="post" class="cart">
+                     <form method="post" class="cart">
                        <input type="hidden" value="productID" name="add-to-cart">
                        <table class="table variations no-border">
                          <tbody>
@@ -188,9 +197,11 @@ require_once('funciones.php');
                                    </li>
                                  </ul>
                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
-                                 <form action="/detail.php?id=<?=$productID->Name?>">
-                                 <input type="text" name="nombre">
-                                 <input type="text" names="comentario">
+                                 <form action="/detail.php?id=<?=$product->Name?>">
+                                     <label for="">Nombre</label>
+                                 <input type="text" name="name">
+                                 <label for="">Comentario</label>
+                                 <input type="text-area" name="message">
                                  <input type="submit" value="Submit">
                                  </form>
                              </div>
