@@ -5,7 +5,6 @@ require_once('funciones.php');
 if ($_POST) {
     $ProductId = $_POST['ProductId'];
     $product = traerPorID($ProductId);
-    var_dump('asdasd');exit;
     guardarComentario($_POST,$ProductId);
 }else{
     if (!isset($_GET['ProductId'])) {
@@ -203,7 +202,7 @@ if ($_POST) {
                                    </li>
                                  </ul>
                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
-                                 <form method="post" action="/detail.php">
+                                 <form method="post" action="">
                                      <input type="hidden" name="ProductId" value="<?=$product->ProductId?>">
                                      <label for="">Nombre</label>
                                      <input type="text" name="name">

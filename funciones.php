@@ -84,7 +84,7 @@ function traerTodosComment($ProductId){
 }
 
 
-function traerUltimoIDComment(){
+function traerUltimoIDComment($ProductId){
     $todos = traerTodosComment($ProductId);
 
     if (count($todos) == 0) {
