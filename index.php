@@ -75,7 +75,7 @@ require_once('funciones.php');
                                    </div>
                                  </div>
                                  <div class="product-details text-center bg-lighter pt-15 pb-10">
-                                   <a href="detail.php"><h5 class="product-title mt-0"><?=$product->Name?></h5></a>
+                                   <a href="detail.php?id=<?=$productID->Name?>" ><h5 class="product-title mt-0"><?=$product->Name?></h5></a>
 
                                    <div class="price">
                                        <span><?=$product->SupplierName?></span>

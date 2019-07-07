@@ -1,15 +1,13 @@
 <?php
 require_once('funciones.php');
 
-// if (!isset($_GET['productID'])) {
-//     var_dump('Producto no encontrado');
-//     exit;
-// }else {
-//     $productID = $_GET['productID'];
-//     $product = traerPorID($productID);
-//     var_dump($product);
-//     exit;
-// }
+  if (!isset($_GET['productID'])) {
+      var_dump('Producto no encontrado');
+      exit;
+  }else {
+      $productID = $_GET['productID'];
+      $product = traerPorID($productID);
+ }
  ?>
  <!DOCTYPE html>
  <html dir="ltr" lang="en">
@@ -72,7 +70,7 @@ require_once('funciones.php');
                </div>
                <div class="col-md-7">
                  <div class="product-summary">
-                   <h2 class="product-title">Saddles</h2>
+                   <h2 class="product-title"><?=$product->Name?></h2>
                    <div class="product_review">
                      <ul class="review_text list-inline">
                        <li>
@@ -82,13 +80,13 @@ require_once('funciones.php');
                        <li><a href="#">Add reviews</a></li>
                      </ul>
                    </div>
-                   <div class="price"> <del><span class="amount">$165.00</span></del> <ins><span class="amount">$160.00</span></ins> </div>
+                   <div class="price"> <del><span class="amount">$<?=$product->Price?></span></del> <ins><span class="amount"><?=$product->Price?></span></ins> </div>
                    <div class="short-description">
-                     <p>Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut posuere mollis nulla ut consectetur.</p>
+                     <p><?=$product->Description?></p>
                    </div>
-                   <div class="tags"><strong>SKU:</strong> EA34</div>
-                   <div class="category"><strong>Category:</strong> <a href="#">Helmets</a>, <a href="#">Horse Rugs</a></div>
-                   <div class="tags"><strong>Tags:</strong> <a href="#">Saddles</a>, <a href="#">Whip</a></div>
+                   <div class="tags"><strong>Product ID:</strong> <?=$product->ProductId?></div>
+                   <div class="category"><strong>Category:</strong> <a href="#"><?=$product->MainCategory?></a></div>
+                   <div class="tags"><strong>Tags:</strong> <a href="#"><?=$product->Category?></a></div>
                    <div class="cart-form-wrapper mt-30">
                      <form enctype="multipart/form-data" method="post" class="cart">
                        <input type="hidden" value="productID" name="add-to-cart">
@@ -190,6 +188,11 @@ require_once('funciones.php');
                                    </li>
                                  </ul>
                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
+                                 <form action="/detail.php?id=<?=$productID->Name?>">
+                                 <input type="text" name="nombre">
+                                 <input type="text" names="comentario">
+                                 <input type="submit" value="Submit">
+                                 </form>
                              </div>
                            </li>
                          </ol>
