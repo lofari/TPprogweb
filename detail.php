@@ -176,32 +176,25 @@ if ($_POST) {
                      <div class="tab-pane fade" id="tab3">
                        <div class="reviews">
                          <ol class="commentlist">
-                           <li class="comment">
-                             <div class="media"> <a href="#" class="media-left"><img class="img-circle" alt="" src="https://placehold.it/75x75" width="75"></a>
-                               <div class="media-body">
-                                 <ul class="review_text list-inline">
-                                   <li>
-                                     <div title="Rated 5.00 out of 5" class="star-rating"><span style="width: 100%;">5.00</span></div>
+                           <?php if (count($comentarios)): ?>
+                               <?php foreach ($comentarios as $comentario): ?>
+                                   <li class="comment">
+                                     <div class="media"> <a href="#" class="media-left"><img class="img-circle" alt="" src="https://placehold.it/75x75" width="75"></a>
+                                       <div class="media-body">
+                                         <ul class="review_text list-inline">
+                                           <li>
+                                             <div title="Rated 5.00 out of 5" class="star-rating"><span style="width: 100%;">5.00</span></div>
+                                           </li>
+                                           <li>
+                                             <h5 class="media-heading meta"><span class="author">Tom Joe</span> – Mar 15, 2015:</h5>
+                                           </li>
+                                         </ul>
+                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
+                                     </div>
                                    </li>
-                                   <li>
-                                     <h5 class="media-heading meta"><span class="author">Tom Joe</span> – Mar 15, 2015:</h5>
-                                   </li>
-                                 </ul>
-                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
-                             </div>
-                           </li>
-                           <li class="comment">
-                             <div class="media"> <a href="#" class="media-left"><img class="img-circle" alt="" src="https://placehold.it/75x75" width="75"></a>
-                               <div class="media-body">
-                                 <ul class="review_text list-inline">
-                                   <li>
-                                     <div title="Rated 4.00 out of 5" class="star-rating"><span style="width: 80%;">4.00</span></div>
-                                   </li>
-                                   <li>
-                                     <h5 class="media-heading meta"><span class="author">Mark Doe</span> – Jan 23, 2015:</h5>
-                                   </li>
-                                 </ul>
-                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
+                               <?php endforeach; ?>
+                           <?php endif; ?>
+
                                  <form method="post" action="">
                                      <input type="hidden" name="ProductId" value="<?=$product->ProductId?>">
                                      <label for="">Nombre</label>
@@ -210,8 +203,6 @@ if ($_POST) {
                                      <input type="text-area" name="message">
                                      <input type="submit" value="Submit">
                                  </form>
-                             </div>
-                           </li>
                          </ol>
                        </div>
                      </div>
