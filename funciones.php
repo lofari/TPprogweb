@@ -105,7 +105,7 @@ function traerPorID($id)
 {
     $todos = getProducts();
     foreach ($todos as $producto) {
-        if ($producto->ProductId == $id) {
+        if ($producto->ProductID == $id) {
             $final = $producto;
             return $final;
         }

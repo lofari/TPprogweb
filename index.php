@@ -70,12 +70,12 @@ require_once('funciones.php');
                                    <img alt="" src="http://placehold.it/320x360" class="img-responsive img-fullwidth">
                                    <div class="overlay">
                                      <div class="btn-product-view-details">
-                                       <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="detail.php?productID=<?=$product->ProductId?>">View detail</a>
+                                       <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="detail.php?productID=<?=$product->ProductID?>">View detail</a>
                                      </div>
                                    </div>
                                  </div>
                                  <div class="product-details text-center bg-lighter pt-15 pb-10">
-                                   <a href="detail.php?productID=<?=$product->ProductId?>" ><h5 class="product-title mt-0"><?=$product->Name?></h5></a>
+                                   <a href="detail.php?productID=<?=$product->ProductID?>" ><h5 class="product-title mt-0"><?=$product->Name?></h5></a>
 
                                    <div class="price">
                                        <span><?=$product->SupplierName?></span>

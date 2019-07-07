@@ -98,7 +98,7 @@ if ($_POST) {
                    <div class="short-description">
                      <p><?=$product->Description?></p>
                    </div>
-                   <div class="tags"><strong>Product ID:</strong> <?=$product->ProductId?></div>
+                   <div class="tags"><strong>Product ID:</strong> <?=$product->ProductID?></div>
                    <div class="category"><strong>Category:</strong> <a href="#"><?=$product->MainCategory?></a></div>
                    <div class="tags"><strong>Tags:</strong> <a href="#"><?=$product->Category?></a></div>
                    <div class="cart-form-wrapper mt-30">
