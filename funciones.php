@@ -69,7 +69,9 @@ function crearComment($data,$ProductId){
 }
 
 function traerTodosComment($ProductId){
-    $todosJSON = file_get_contents($ProductId.'.json');
+    if (file_exists($ProductId.'.json')) {
+        $todosJSON = file_get_contents($ProductId.'.json');
+    }
 
     $commentsArray = explode(PHP_EOL, $todosJSON);
 
