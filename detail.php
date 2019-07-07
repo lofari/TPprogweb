@@ -1,22 +1,27 @@
 <?php
 require_once('funciones.php');
 
-  if (!isset($_GET['productID'])) {
-      var_dump('Producto no encontrado');
-      exit;
-  }else {
-      $productID = $_GET['productID'];
-      $product = traerPorID($productID);
 
-      if (count(traerTodosComment($productID))) {
-          $comentarios = traerTodosComment($productID);
-      }
- }
+if ($_POST) {
+    $productID = $_POST['productID'];
+    $product = traerPorID($productID);
+    guardarComentario($_POST,$productID);
+}else{
+    if (!isset($_GET['productID'])) {
+        var_dump('Producto no encontrado');
+        exit;
+    }else {
+        $productID = $_GET['productID'];
+        $product = traerPorID($productID);
+
+        if (count(traerTodosComment($productID))) {
+            $comentarios = traerTodosComment($productID);
+        }
+    }
+}
 
 
- if (isset($_POST['name'])) {
-     guardarComentario($_POST,$productID);
- }
+
  ?>
  <!DOCTYPE html>
  <html dir="ltr" lang="en">
@@ -197,12 +202,13 @@ require_once('funciones.php');
                                    </li>
                                  </ul>
                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat purus tempor sem molestie, sed blandit lacus posuere. Lorem ipsum dolor sit amet.</div>
-                                 <form action="/detail.php?id=<?=$product->Name?>">
+                                 <form action="/detail.php">
+                                     <input type="hidden" name="productID" value="<?=$product->ProductID?>">
                                      <label for="">Nombre</label>
-                                 <input type="text" name="name">
-                                 <label for="">Comentario</label>
-                                 <input type="text-area" name="message">
-                                 <input type="submit" value="Submit">
+                                     <input type="text" name="name">
+                                     <label for="">Comentario</label>
+                                     <input type="text-area" name="message">
+                                     <input type="submit" value="Submit">
                                  </form>
                              </div>
                            </li>
